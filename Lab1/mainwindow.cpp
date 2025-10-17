@@ -62,7 +62,6 @@ MainWindow::~MainWindow()
 void MainWindow::btnNumClicked()
 {
     QString digit = qobject_cast<QPushButton *>(sender())->text();
-    // 情况1：当前显示为"0"（初始或CE后），新输入直接覆盖0
     if (operand == "0" || ui->display->text() == "0") {
         operand = digit;
     }
