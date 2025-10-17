@@ -92,6 +92,8 @@ void MainWindow::on_btnDel_clicked()
 void MainWindow::on_btnClear_clicked()
 {
     operand.clear();
+    operands.clear();
+    opcodes.clear();
     ui->display->setText(operand);
 }
 void MainWindow::on_btnClearAlll_clicked()
