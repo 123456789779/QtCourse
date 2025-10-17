@@ -64,9 +64,7 @@ void MainWindow::btnNumClicked()
     QString digit = qobject_cast<QPushButton *>(sender())->text();
     if (operand == "0" || ui->display->text() == "0") {
         operand = digit;
-    }
-    // 情况2：当前有有效输入，追加数字
-    else {
+    } else {
         operand += digit;
     }
     ui->display->setText(operand);
