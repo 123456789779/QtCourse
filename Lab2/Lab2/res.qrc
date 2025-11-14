@@ -19,5 +19,6 @@
         <file>img/tool.png</file>
         <file>img/undo.png</file>
         <file>img/wrap.png</file>
+        <file>img/book.png</file>
     </qresource>
 </RCC>
