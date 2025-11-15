@@ -39,8 +39,8 @@ public:
     QAction *actionReplace;
     QAction *actionFont;
     QAction *actionLineWrap;
-    QAction *actionToolBar;
-    QAction *actionStatusBar;
+    QAction *actionShowToolBar;
+    QAction *actionShowStatusBar;
     QAction *actionRedo;
     QAction *actionSelectAll;
     QAction *actionLineNumber;
@@ -131,18 +131,18 @@ public:
         QIcon icon12;
         icon12.addFile(QString::fromUtf8(":/img/wrap.png"), QSize(), QIcon::Normal, QIcon::Off);
         actionLineWrap->setIcon(icon12);
-        actionToolBar = new QAction(MainWindow);
-        actionToolBar->setObjectName(QString::fromUtf8("actionToolBar"));
-        actionToolBar->setCheckable(true);
+        actionShowToolBar = new QAction(MainWindow);
+        actionShowToolBar->setObjectName(QString::fromUtf8("actionShowToolBar"));
+        actionShowToolBar->setCheckable(true);
         QIcon icon13;
         icon13.addFile(QString::fromUtf8(":/img/tool.png"), QSize(), QIcon::Normal, QIcon::Off);
-        actionToolBar->setIcon(icon13);
-        actionStatusBar = new QAction(MainWindow);
-        actionStatusBar->setObjectName(QString::fromUtf8("actionStatusBar"));
-        actionStatusBar->setCheckable(true);
+        actionShowToolBar->setIcon(icon13);
+        actionShowStatusBar = new QAction(MainWindow);
+        actionShowStatusBar->setObjectName(QString::fromUtf8("actionShowStatusBar"));
+        actionShowStatusBar->setCheckable(true);
         QIcon icon14;
         icon14.addFile(QString::fromUtf8(":/img/status.png"), QSize(), QIcon::Normal, QIcon::Off);
-        actionStatusBar->setIcon(icon14);
+        actionShowStatusBar->setIcon(icon14);
         actionRedo = new QAction(MainWindow);
         actionRedo->setObjectName(QString::fromUtf8("actionRedo"));
         actionRedo->setIcon(icon4);
@@ -222,8 +222,8 @@ public:
         menu_O->addSeparator();
         menu_O->addAction(actionFontBackgourndColor);
         menu_O->addAction(actionEditorBackgroundColor);
-        menu_V->addAction(actionToolBar);
-        menu_V->addAction(actionStatusBar);
+        menu_V->addAction(actionShowToolBar);
+        menu_V->addAction(actionShowStatusBar);
         menu_H->addAction(actionAbout);
         toolBar->addAction(actionNew);
         toolBar->addAction(actionOpen);
@@ -243,8 +243,8 @@ public:
         toolBar->addAction(actionLineNumber);
         toolBar->addAction(actionLineWrap);
         toolBar->addSeparator();
-        toolBar->addAction(actionToolBar);
-        toolBar->addAction(actionStatusBar);
+        toolBar->addAction(actionShowToolBar);
+        toolBar->addAction(actionShowStatusBar);
 
         retranslateUi(MainWindow);
 
@@ -294,8 +294,8 @@ public:
 #endif // QT_NO_SHORTCUT
         actionFont->setText(QApplication::translate("MainWindow", "\345\255\227\344\275\223(&F)", nullptr));
         actionLineWrap->setText(QApplication::translate("MainWindow", "\350\207\252\345\212\250\346\215\242\350\241\214(&W)", nullptr));
-        actionToolBar->setText(QApplication::translate("MainWindow", "\345\267\245\345\205\267\346\240\217(&T)", nullptr));
-        actionStatusBar->setText(QApplication::translate("MainWindow", "\347\212\266\346\200\201\346\240\217(&S)", nullptr));
+        actionShowToolBar->setText(QApplication::translate("MainWindow", "\345\267\245\345\205\267\346\240\217(&T)", nullptr));
+        actionShowStatusBar->setText(QApplication::translate("MainWindow", "\347\212\266\346\200\201\346\240\217(&S)", nullptr));
         actionRedo->setText(QApplication::translate("MainWindow", "\346\201\242\345\244\215(&Z)", nullptr));
 #ifndef QT_NO_SHORTCUT
         actionRedo->setShortcut(QApplication::translate("MainWindow", "Ctrl+Shift+Z", nullptr));

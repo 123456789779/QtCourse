@@ -45,6 +45,8 @@ MainWindow::MainWindow(QWidget *parent)
         ui->textEdit->setLineWrapMode(QPlainTextEdit::NoWrap);
         ui->actionLineWrap->setChecked(true);
     }
+    ui->actionShowStatusBar->setChecked(true);
+    ui->actionShowToolBar->setChecked(true);
 }
 
 MainWindow::~MainWindow()
@@ -290,5 +292,36 @@ void MainWindow::on_actionFont_triggered()
     QFont font = QFontDialog::getFont(&ok, this);
     if (ok)
         ui->textEdit->setFont(font);
+}
+
+
+
+
+void MainWindow::on_actionShowToolBar_triggered()
+{
+    bool visible = ui->toolBar->isVisible();
+    ui->toolBar->setVisible(!visible);
+    ui->actionShowToolBar->setChecked(!visible);
+}
+
+
+void MainWindow::on_actionShowStatusBar_triggered()
+{
+    bool visible = ui->statusbar->isVisible();
+    ui->statusbar->setVisible(!visible);
+    ui->actionShowStatusBar->setChecked(!visible);
+}
+
+
+void MainWindow::on_actionSelectAll_triggered()
+{
+    ui->textEdit->selectAll();
+}
+
+
+void MainWindow::on_actionExit_triggered()
+{
+    if (userEditConfirmed())
+        exit(0);
 }
 
