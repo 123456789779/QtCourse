@@ -6,6 +6,8 @@
 #include "qfiledialog.h"
 #include <QMessageBox>
 #include <QTextStream>
+#include <QColorDialog>
+#include <QFontDialog>
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
@@ -33,6 +35,16 @@ MainWindow::MainWindow(QWidget *parent)
     ui->actionCopy->setEnabled(false);
     ui->actionCut->setEnabled(false);
     ui->actionPaste->setEnabled(false);
+
+    QPlainTextEdit::LineWrapMode mode = ui->textEdit->lineWrapMode();
+    if (mode == QPlainTextEdit::NoWrap) {
+        ui->textEdit->setLineWrapMode(QPlainTextEdit::WidgetWidth);
+
+        ui->actionLineWrap->setChecked(false);
+    } else {
+        ui->textEdit->setLineWrapMode(QPlainTextEdit::NoWrap);
+        ui->actionLineWrap->setChecked(true);
+    }
 }
 
 MainWindow::~MainWindow()
@@ -233,5 +245,50 @@ void MainWindow::on_textEdit_copyAvailable(bool b)
 {
     ui->actionCopy->setEnabled(b);
     ui->actionCut->setEnabled(b);
+}
+
+
+void MainWindow::on_actionFontColor_triggered()
+{
+    QColor color = QColorDialog::getColor(Qt::black, this, "选择颜色");
+    if (color.isValid()) {
+        ui->textEdit->setStyleSheet(QString("QPlainTextEdit {color:%1}").arg(color.name()));
+    }
+}
+
+
+void MainWindow::on_actionFontBackgourndColor_triggered()
+{
+    QColor color = QColorDialog::getColor(Qt::black, this, "选择颜色");
+    if (color.isValid()) {
+        ui->textEdit->setStyleSheet(QString("QPlainTextEdit {background-color:%1}").arg(color.name()));
+    }
+}
+
+
+void MainWindow::on_actionEditorBackgroundColor_triggered()
+{
+
+}
+
+void MainWindow::on_actionLineWrap_triggered()
+{
+    QPlainTextEdit::LineWrapMode mode = ui->textEdit->lineWrapMode();
+    if (mode == QPlainTextEdit::NoWrap) {
+        ui->textEdit->setLineWrapMode(QPlainTextEdit::WidgetWidth);
+        ui->actionLineWrap->setChecked(true);
+    } else {
+        ui->textEdit->setLineWrapMode(QPlainTextEdit::NoWrap);
+        ui->actionLineWrap->setChecked(false);
+    }
+}
+
+
+void MainWindow::on_actionFont_triggered()
+{
+    bool ok = false;
+    QFont font = QFontDialog::getFont(&ok, this);
+    if (ok)
+        ui->textEdit->setFont(font);
 }
 
