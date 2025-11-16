@@ -15,11 +15,11 @@
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenu>
 #include <QtWidgets/QMenuBar>
-#include <QtWidgets/QPlainTextEdit>
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QToolBar>
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
+#include <codeeditor.h>
 
 QT_BEGIN_NAMESPACE
 
@@ -43,14 +43,14 @@ public:
     QAction *actionShowStatusBar;
     QAction *actionRedo;
     QAction *actionSelectAll;
-    QAction *actionLineNumber;
+    QAction *actionShowLineNumber;
     QAction *actionFontColor;
     QAction *actionFontBackgourndColor;
     QAction *actionEditorBackgroundColor;
     QAction *actionAbout;
     QWidget *centralwidget;
     QVBoxLayout *verticalLayout;
-    QPlainTextEdit *textEdit;
+    CodeEditor *textEdit;
     QMenuBar *menubar;
     QMenu *menu;
     QMenu *menu_E;
@@ -148,11 +148,12 @@ public:
         actionRedo->setIcon(icon4);
         actionSelectAll = new QAction(MainWindow);
         actionSelectAll->setObjectName(QString::fromUtf8("actionSelectAll"));
-        actionLineNumber = new QAction(MainWindow);
-        actionLineNumber->setObjectName(QString::fromUtf8("actionLineNumber"));
+        actionShowLineNumber = new QAction(MainWindow);
+        actionShowLineNumber->setObjectName(QString::fromUtf8("actionShowLineNumber"));
+        actionShowLineNumber->setCheckable(true);
         QIcon icon15;
         icon15.addFile(QString::fromUtf8(":/img/linenumber.png"), QSize(), QIcon::Normal, QIcon::Off);
-        actionLineNumber->setIcon(icon15);
+        actionShowLineNumber->setIcon(icon15);
         actionFontColor = new QAction(MainWindow);
         actionFontColor->setObjectName(QString::fromUtf8("actionFontColor"));
         actionFontBackgourndColor = new QAction(MainWindow);
@@ -167,7 +168,7 @@ public:
         verticalLayout->setSpacing(0);
         verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
         verticalLayout->setContentsMargins(1, 1, 1, 1);
-        textEdit = new QPlainTextEdit(centralwidget);
+        textEdit = new CodeEditor(centralwidget);
         textEdit->setObjectName(QString::fromUtf8("textEdit"));
 
         verticalLayout->addWidget(textEdit);
@@ -216,7 +217,7 @@ public:
         menu_E->addSeparator();
         menu_E->addAction(actionSelectAll);
         menu_O->addAction(actionLineWrap);
-        menu_O->addAction(actionLineNumber);
+        menu_O->addAction(actionShowLineNumber);
         menu_O->addAction(actionFont);
         menu_O->addAction(actionFontColor);
         menu_O->addSeparator();
@@ -240,7 +241,7 @@ public:
         toolBar->addAction(actionReplace);
         toolBar->addSeparator();
         toolBar->addAction(actionFont);
-        toolBar->addAction(actionLineNumber);
+        toolBar->addAction(actionShowLineNumber);
         toolBar->addAction(actionLineWrap);
         toolBar->addSeparator();
         toolBar->addAction(actionShowToolBar);
@@ -304,9 +305,9 @@ public:
 #ifndef QT_NO_SHORTCUT
         actionSelectAll->setShortcut(QApplication::translate("MainWindow", "Ctrl+V", nullptr));
 #endif // QT_NO_SHORTCUT
-        actionLineNumber->setText(QApplication::translate("MainWindow", "\346\230\276\347\244\272\350\241\214\345\217\267(&W)", nullptr));
+        actionShowLineNumber->setText(QApplication::translate("MainWindow", "\346\230\276\347\244\272\350\241\214\345\217\267(&W)", nullptr));
 #ifndef QT_NO_SHORTCUT
-        actionLineNumber->setShortcut(QApplication::translate("MainWindow", "Ctrl+L", nullptr));
+        actionShowLineNumber->setShortcut(QApplication::translate("MainWindow", "Ctrl+L", nullptr));
 #endif // QT_NO_SHORTCUT
         actionFontColor->setText(QApplication::translate("MainWindow", "\345\255\227\344\275\223\351\242\234\350\211\262", nullptr));
         actionFontBackgourndColor->setText(QApplication::translate("MainWindow", "\345\255\227\344\275\223\350\203\214\346\231\257\350\211\262", nullptr));

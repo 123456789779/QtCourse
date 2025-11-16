@@ -31,7 +31,7 @@
      <number>1</number>
     </property>
     <item>
-     <widget class="QPlainTextEdit" name="textEdit"/>
+     <widget class="CodeEditor" name="textEdit"/>
     </item>
    </layout>
   </widget>
@@ -75,7 +75,7 @@
      <string>格式(&amp;O)</string>
     </property>
     <addaction name="actionLineWrap"/>
-    <addaction name="actionLineNumber"/>
+    <addaction name="actionShowLineNumber"/>
     <addaction name="actionFont"/>
     <addaction name="actionFontColor"/>
     <addaction name="separator"/>
@@ -127,7 +127,7 @@
    <addaction name="actionReplace"/>
    <addaction name="separator"/>
    <addaction name="actionFont"/>
-   <addaction name="actionLineNumber"/>
+   <addaction name="actionShowLineNumber"/>
    <addaction name="actionLineWrap"/>
    <addaction name="separator"/>
    <addaction name="actionShowToolBar"/>
@@ -324,7 +324,10 @@
     <string>Ctrl+V</string>
    </property>
   </action>
-  <action name="actionLineNumber">
+  <action name="actionShowLineNumber">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
    <property name="icon">
     <iconset resource="res.qrc">
      <normaloff>:/img/linenumber.png</normaloff>:/img/linenumber.png</iconset>
@@ -357,6 +360,13 @@
    </property>
   </action>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>CodeEditor</class>
+   <extends>QPlainTextEdit</extends>
+   <header location="global">codeeditor.h</header>
+  </customwidget>
+ </customwidgets>
  <tabstops>
   <tabstop>textEdit</tabstop>
  </tabstops>

@@ -7,6 +7,8 @@ ReplaceDialog::ReplaceDialog(QWidget *parent, QPlainTextEdit *textEdit) :
 {
     ui->setupUi(this);
     pTextEdit = textEdit;
+
+    ui->rbdown->setChecked(true);
 }
 
 ReplaceDialog::~ReplaceDialog()
