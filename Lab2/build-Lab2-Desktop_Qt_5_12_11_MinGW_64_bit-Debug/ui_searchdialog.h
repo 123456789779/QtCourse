@@ -33,13 +33,13 @@ public:
     QLabel *label;
     QLineEdit *searchText;
     QHBoxLayout *horizontalLayout_3;
-    QCheckBox *cb;
+    QCheckBox *cbCaseSensitive;
     QGroupBox *groupBox;
     QHBoxLayout *horizontalLayout;
     QRadioButton *rbup;
     QRadioButton *rbdown;
     QVBoxLayout *verticalLayout;
-    QPushButton *pushButton_2;
+    QPushButton *btFindNext;
     QPushButton *btCancel;
 
     void setupUi(QDialog *SearchDialog)
@@ -74,10 +74,10 @@ public:
 
         horizontalLayout_3 = new QHBoxLayout();
         horizontalLayout_3->setObjectName(QString::fromUtf8("horizontalLayout_3"));
-        cb = new QCheckBox(SearchDialog);
-        cb->setObjectName(QString::fromUtf8("cb"));
+        cbCaseSensitive = new QCheckBox(SearchDialog);
+        cbCaseSensitive->setObjectName(QString::fromUtf8("cbCaseSensitive"));
 
-        horizontalLayout_3->addWidget(cb);
+        horizontalLayout_3->addWidget(cbCaseSensitive);
 
         groupBox = new QGroupBox(SearchDialog);
         groupBox->setObjectName(QString::fromUtf8("groupBox"));
@@ -104,10 +104,10 @@ public:
 
         verticalLayout = new QVBoxLayout();
         verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
-        pushButton_2 = new QPushButton(SearchDialog);
-        pushButton_2->setObjectName(QString::fromUtf8("pushButton_2"));
+        btFindNext = new QPushButton(SearchDialog);
+        btFindNext->setObjectName(QString::fromUtf8("btFindNext"));
 
-        verticalLayout->addWidget(pushButton_2);
+        verticalLayout->addWidget(btFindNext);
 
         btCancel = new QPushButton(SearchDialog);
         btCancel->setObjectName(QString::fromUtf8("btCancel"));
@@ -130,11 +130,11 @@ public:
     {
         SearchDialog->setWindowTitle(QApplication::translate("SearchDialog", "\346\237\245\346\211\276", nullptr));
         label->setText(QApplication::translate("SearchDialog", "\346\237\245\346\211\276\347\233\256\346\240\207\357\274\232", nullptr));
-        cb->setText(QApplication::translate("SearchDialog", "\345\214\272\345\210\206\345\244\247\345\260\217\345\206\231", nullptr));
+        cbCaseSensitive->setText(QApplication::translate("SearchDialog", "\345\214\272\345\210\206\345\244\247\345\260\217\345\206\231", nullptr));
         groupBox->setTitle(QApplication::translate("SearchDialog", "\346\226\271\345\220\221", nullptr));
         rbup->setText(QApplication::translate("SearchDialog", "\345\220\221\344\270\212\357\274\210U\357\274\211", nullptr));
         rbdown->setText(QApplication::translate("SearchDialog", "\345\220\221\344\270\213\357\274\210D\357\274\211", nullptr));
-        pushButton_2->setText(QApplication::translate("SearchDialog", "\346\237\245\346\211\276\344\270\213\344\270\200\344\270\252\357\274\210F\357\274\211", nullptr));
+        btFindNext->setText(QApplication::translate("SearchDialog", "\346\237\245\346\211\276\344\270\213\344\270\200\344\270\252\357\274\210F\357\274\211", nullptr));
         btCancel->setText(QApplication::translate("SearchDialog", "\345\217\226\346\266\210", nullptr));
     } // retranslateUi
 

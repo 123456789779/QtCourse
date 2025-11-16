@@ -30,27 +30,27 @@ public:
     QVBoxLayout *verticalLayout_2;
     QHBoxLayout *horizontalLayout_2;
     QLabel *label;
-    QLineEdit *TargetText;
+    QLineEdit *searchText;
     QHBoxLayout *horizontalLayout_3;
     QLabel *label_2;
-    QLineEdit *searchText;
+    QLineEdit *targetText;
     QHBoxLayout *horizontalLayout_4;
-    QCheckBox *cb;
+    QCheckBox *cbCaseSensitive;
     QGroupBox *groupBox;
     QHBoxLayout *horizontalLayout;
     QRadioButton *rbup;
     QRadioButton *rbdown;
     QVBoxLayout *verticalLayout;
-    QPushButton *pushButton_2;
-    QPushButton *pushButton;
-    QPushButton *pushButton_3;
-    QPushButton *pushButton_4;
+    QPushButton *btFindNext;
+    QPushButton *btReplace;
+    QPushButton *btReplaceAll;
+    QPushButton *btCancel;
 
     void setupUi(QDialog *ReplaceDialog)
     {
         if (ReplaceDialog->objectName().isEmpty())
             ReplaceDialog->setObjectName(QString::fromUtf8("ReplaceDialog"));
-        ReplaceDialog->resize(400, 300);
+        ReplaceDialog->resize(407, 300);
         horizontalLayout_5 = new QHBoxLayout(ReplaceDialog);
         horizontalLayout_5->setObjectName(QString::fromUtf8("horizontalLayout_5"));
         verticalLayout_2 = new QVBoxLayout();
@@ -72,10 +72,10 @@ public:
 
         horizontalLayout_2->addWidget(label);
 
-        TargetText = new QLineEdit(ReplaceDialog);
-        TargetText->setObjectName(QString::fromUtf8("TargetText"));
+        searchText = new QLineEdit(ReplaceDialog);
+        searchText->setObjectName(QString::fromUtf8("searchText"));
 
-        horizontalLayout_2->addWidget(TargetText);
+        horizontalLayout_2->addWidget(searchText);
 
 
         verticalLayout_2->addLayout(horizontalLayout_2);
@@ -94,20 +94,20 @@ public:
 
         horizontalLayout_3->addWidget(label_2);
 
-        searchText = new QLineEdit(ReplaceDialog);
-        searchText->setObjectName(QString::fromUtf8("searchText"));
+        targetText = new QLineEdit(ReplaceDialog);
+        targetText->setObjectName(QString::fromUtf8("targetText"));
 
-        horizontalLayout_3->addWidget(searchText);
+        horizontalLayout_3->addWidget(targetText);
 
 
         verticalLayout_2->addLayout(horizontalLayout_3);
 
         horizontalLayout_4 = new QHBoxLayout();
         horizontalLayout_4->setObjectName(QString::fromUtf8("horizontalLayout_4"));
-        cb = new QCheckBox(ReplaceDialog);
-        cb->setObjectName(QString::fromUtf8("cb"));
+        cbCaseSensitive = new QCheckBox(ReplaceDialog);
+        cbCaseSensitive->setObjectName(QString::fromUtf8("cbCaseSensitive"));
 
-        horizontalLayout_4->addWidget(cb);
+        horizontalLayout_4->addWidget(cbCaseSensitive);
 
         groupBox = new QGroupBox(ReplaceDialog);
         groupBox->setObjectName(QString::fromUtf8("groupBox"));
@@ -134,25 +134,25 @@ public:
 
         verticalLayout = new QVBoxLayout();
         verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
-        pushButton_2 = new QPushButton(ReplaceDialog);
-        pushButton_2->setObjectName(QString::fromUtf8("pushButton_2"));
+        btFindNext = new QPushButton(ReplaceDialog);
+        btFindNext->setObjectName(QString::fromUtf8("btFindNext"));
 
-        verticalLayout->addWidget(pushButton_2);
+        verticalLayout->addWidget(btFindNext);
 
-        pushButton = new QPushButton(ReplaceDialog);
-        pushButton->setObjectName(QString::fromUtf8("pushButton"));
+        btReplace = new QPushButton(ReplaceDialog);
+        btReplace->setObjectName(QString::fromUtf8("btReplace"));
 
-        verticalLayout->addWidget(pushButton);
+        verticalLayout->addWidget(btReplace);
 
-        pushButton_3 = new QPushButton(ReplaceDialog);
-        pushButton_3->setObjectName(QString::fromUtf8("pushButton_3"));
+        btReplaceAll = new QPushButton(ReplaceDialog);
+        btReplaceAll->setObjectName(QString::fromUtf8("btReplaceAll"));
 
-        verticalLayout->addWidget(pushButton_3);
+        verticalLayout->addWidget(btReplaceAll);
 
-        pushButton_4 = new QPushButton(ReplaceDialog);
-        pushButton_4->setObjectName(QString::fromUtf8("pushButton_4"));
+        btCancel = new QPushButton(ReplaceDialog);
+        btCancel->setObjectName(QString::fromUtf8("btCancel"));
 
-        verticalLayout->addWidget(pushButton_4);
+        verticalLayout->addWidget(btCancel);
 
 
         horizontalLayout_5->addLayout(verticalLayout);
@@ -168,14 +168,14 @@ public:
         ReplaceDialog->setWindowTitle(QApplication::translate("ReplaceDialog", "\346\233\277\346\215\242", nullptr));
         label->setText(QApplication::translate("ReplaceDialog", "\346\237\245\346\211\276\347\233\256\346\240\207\357\274\232", nullptr));
         label_2->setText(QApplication::translate("ReplaceDialog", "\346\233\277\346\215\242\344\270\272\357\274\232", nullptr));
-        cb->setText(QApplication::translate("ReplaceDialog", "\345\214\272\345\210\206\345\244\247\345\260\217\345\206\231", nullptr));
+        cbCaseSensitive->setText(QApplication::translate("ReplaceDialog", "\345\214\272\345\210\206\345\244\247\345\260\217\345\206\231", nullptr));
         groupBox->setTitle(QApplication::translate("ReplaceDialog", "\346\226\271\345\220\221", nullptr));
         rbup->setText(QApplication::translate("ReplaceDialog", "\345\220\221\344\270\212\357\274\210U\357\274\211", nullptr));
         rbdown->setText(QApplication::translate("ReplaceDialog", "\345\220\221\344\270\213\357\274\210D\357\274\211", nullptr));
-        pushButton_2->setText(QApplication::translate("ReplaceDialog", "\346\237\245\346\211\276\344\270\213\344\270\200\344\270\252\357\274\210F\357\274\211", nullptr));
-        pushButton->setText(QApplication::translate("ReplaceDialog", "\346\233\277\346\215\242\357\274\210R\357\274\211", nullptr));
-        pushButton_3->setText(QApplication::translate("ReplaceDialog", "\345\205\250\351\203\250\346\233\277\346\215\242\357\274\210A\357\274\211", nullptr));
-        pushButton_4->setText(QApplication::translate("ReplaceDialog", "\345\217\226\346\266\210", nullptr));
+        btFindNext->setText(QApplication::translate("ReplaceDialog", "\346\237\245\346\211\276\344\270\213\344\270\200\344\270\252\357\274\210F\357\274\211", nullptr));
+        btReplace->setText(QApplication::translate("ReplaceDialog", "\346\233\277\346\215\242\357\274\210R\357\274\211", nullptr));
+        btReplaceAll->setText(QApplication::translate("ReplaceDialog", "\345\205\250\351\203\250\346\233\277\346\215\242\357\274\210A\357\274\211", nullptr));
+        btCancel->setText(QApplication::translate("ReplaceDialog", "\345\217\226\346\266\210", nullptr));
     } // retranslateUi
 
 };
