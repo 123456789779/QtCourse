@@ -1,0 +1,13 @@
+debug/department.o
+debug/doctorview.o
+debug/loginview.o
+debug/main.o
+debug/masterview.o
+debug/patientview.o
+debug/welcomeview.o
+debug/moc_department.o
+debug/moc_doctorview.o
+debug/moc_loginview.o
+debug/moc_masterview.o
+debug/moc_patientview.o
+debug/moc_welcomeview.o
