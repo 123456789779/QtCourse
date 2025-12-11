@@ -2,13 +2,27 @@
 #define IDATABASE_H
 
 #include <QObject>
-
+#include <QtSql>
+#include <QSqlDatabase>
 class IDatabase : public QObject
 {
     Q_OBJECT
 public:
-    explicit IDatabase(QObject *parent = nullptr);
 
+    static IDatabase &getInstance()
+    {
+        static IDatabase instance;
+        return instance;
+    }
+
+private:
+    explicit IDatabase(QObject *parent = nullptr);
+    IDatabase(IDatabase const &)               = delete;
+    void operator=(IDatabase const &)  = delete;
+
+    QSqlDatabase database;
+
+    void ininDatabase();
 signals:
 
 };

@@ -1,5 +1,6 @@
 debug/departmentview.o
 debug/doctorview.o
+debug/idatabase.o
 debug/loginview.o
 debug/main.o
 debug/masterview.o
@@ -9,6 +10,7 @@ debug/welcomeview.o
 debug/qrc_Lab3.o
 debug/moc_departmentview.o
 debug/moc_doctorview.o
+debug/moc_idatabase.o
 debug/moc_loginview.o
 debug/moc_masterview.o
 debug/moc_patienteditview.o

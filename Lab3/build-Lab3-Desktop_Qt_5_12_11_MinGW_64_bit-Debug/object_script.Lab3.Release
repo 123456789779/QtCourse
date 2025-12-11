@@ -1,5 +1,6 @@
 release/departmentview.o
 release/doctorview.o
+release/idatabase.o
 release/loginview.o
 release/main.o
 release/masterview.o
@@ -9,6 +10,7 @@ release/welcomeview.o
 release/qrc_Lab3.o
 release/moc_departmentview.o
 release/moc_doctorview.o
+release/moc_idatabase.o
 release/moc_loginview.o
 release/moc_masterview.o
 release/moc_patienteditview.o
