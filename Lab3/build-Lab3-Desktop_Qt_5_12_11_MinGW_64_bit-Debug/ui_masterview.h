@@ -10,6 +10,7 @@
 #define UI_MASTERVIEW_H
 
 #include <QtCore/QVariant>
+#include <QtGui/QIcon>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QLabel>
@@ -37,13 +38,16 @@ public:
     {
         if (MasterView->objectName().isEmpty())
             MasterView->setObjectName(QString::fromUtf8("MasterView"));
-        MasterView->resize(434, 304);
+        MasterView->resize(774, 572);
         verticalLayout = new QVBoxLayout(MasterView);
         verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
         horizontalLayout = new QHBoxLayout();
         horizontalLayout->setObjectName(QString::fromUtf8("horizontalLayout"));
         btBack = new QPushButton(MasterView);
         btBack->setObjectName(QString::fromUtf8("btBack"));
+        QIcon icon;
+        icon.addFile(QString::fromUtf8(":/img/return.png"), QSize(), QIcon::Normal, QIcon::Off);
+        btBack->setIcon(icon);
 
         horizontalLayout->addWidget(btBack);
 
@@ -62,6 +66,9 @@ public:
 
         btLogout = new QPushButton(MasterView);
         btLogout->setObjectName(QString::fromUtf8("btLogout"));
+        QIcon icon1;
+        icon1.addFile(QString::fromUtf8(":/img/Login.png"), QSize(), QIcon::Normal, QIcon::Off);
+        btLogout->setIcon(icon1);
 
         horizontalLayout->addWidget(btLogout);
 
@@ -82,9 +89,9 @@ public:
     void retranslateUi(QWidget *MasterView)
     {
         MasterView->setWindowTitle(QApplication::translate("MasterView", "MasterView", nullptr));
-        btBack->setText(QApplication::translate("MasterView", "\350\277\224\345\233\236", nullptr));
+        btBack->setText(QString());
         labelTitle->setText(QString());
-        btLogout->setText(QApplication::translate("MasterView", "\346\263\250\351\224\200", nullptr));
+        btLogout->setText(QString());
     } // retranslateUi
 
 };

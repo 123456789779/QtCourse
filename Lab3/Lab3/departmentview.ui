@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>Department</class>
- <widget class="QWidget" name="Department">
+ <class>DepartmentView</class>
+ <widget class="QWidget" name="DepartmentView">
   <property name="geometry">
    <rect>
     <x>0</x>

@@ -1,14 +1,14 @@
-#include "department.h"
-#include "ui_department.h"
+#include "departmentview.h"
+#include "ui_departmentview.h" // 关键：加载Ui::DepartmentView的完整定义
 
-Department::Department(QWidget *parent) :
+DepartmentView::DepartmentView(QWidget *parent) :
     QWidget(parent),
-    ui(new Ui::Department)
+    ui(new Ui::DepartmentView)
 {
     ui->setupUi(this);
 }
 
-Department::~Department()
+DepartmentView::~DepartmentView()
 {
     delete ui;
 }

@@ -35,14 +35,14 @@ public:
     QLabel *label_5;
     QLabel *label_4;
     QVBoxLayout *verticalLayout;
-    QLineEdit *lineEdit_3;
-    QLineEdit *lineEdit_2;
+    QLineEdit *inputUserName;
+    QLineEdit *inputUserPassword;
     QSpacerItem *horizontalSpacer_2;
     QHBoxLayout *horizontalLayout_4;
     QSpacerItem *horizontalSpacer_3;
     QHBoxLayout *horizontalLayout_2;
-    QPushButton *pushButton;
-    QPushButton *pushButton_2;
+    QPushButton *btSignUp;
+    QPushButton *btSignIn;
     QSpacerItem *horizontalSpacer_4;
     QSpacerItem *verticalSpacer_4;
 
@@ -92,15 +92,15 @@ public:
 
         verticalLayout = new QVBoxLayout();
         verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
-        lineEdit_3 = new QLineEdit(LoginView);
-        lineEdit_3->setObjectName(QString::fromUtf8("lineEdit_3"));
+        inputUserName = new QLineEdit(LoginView);
+        inputUserName->setObjectName(QString::fromUtf8("inputUserName"));
 
-        verticalLayout->addWidget(lineEdit_3);
+        verticalLayout->addWidget(inputUserName);
 
-        lineEdit_2 = new QLineEdit(LoginView);
-        lineEdit_2->setObjectName(QString::fromUtf8("lineEdit_2"));
+        inputUserPassword = new QLineEdit(LoginView);
+        inputUserPassword->setObjectName(QString::fromUtf8("inputUserPassword"));
 
-        verticalLayout->addWidget(lineEdit_2);
+        verticalLayout->addWidget(inputUserPassword);
 
 
         horizontalLayout->addLayout(verticalLayout);
@@ -123,15 +123,15 @@ public:
 
         horizontalLayout_2 = new QHBoxLayout();
         horizontalLayout_2->setObjectName(QString::fromUtf8("horizontalLayout_2"));
-        pushButton = new QPushButton(LoginView);
-        pushButton->setObjectName(QString::fromUtf8("pushButton"));
+        btSignUp = new QPushButton(LoginView);
+        btSignUp->setObjectName(QString::fromUtf8("btSignUp"));
 
-        horizontalLayout_2->addWidget(pushButton);
+        horizontalLayout_2->addWidget(btSignUp);
 
-        pushButton_2 = new QPushButton(LoginView);
-        pushButton_2->setObjectName(QString::fromUtf8("pushButton_2"));
+        btSignIn = new QPushButton(LoginView);
+        btSignIn->setObjectName(QString::fromUtf8("btSignIn"));
 
-        horizontalLayout_2->addWidget(pushButton_2);
+        horizontalLayout_2->addWidget(btSignIn);
 
 
         horizontalLayout_4->addLayout(horizontalLayout_2);
@@ -157,10 +157,10 @@ public:
     {
         LoginView->setWindowTitle(QApplication::translate("LoginView", "\347\231\273\345\275\225", nullptr));
         label->setText(QApplication::translate("LoginView", "\346\254\242\350\277\216\344\275\277\347\224\250\345\214\273\347\226\227\350\257\212\346\226\255\346\265\213\350\257\225\347\263\273\347\273\237", nullptr));
-        label_5->setText(QApplication::translate("LoginView", "TextLabel", nullptr));
-        label_4->setText(QApplication::translate("LoginView", "TextLabel", nullptr));
-        pushButton->setText(QApplication::translate("LoginView", "PushButton", nullptr));
-        pushButton_2->setText(QApplication::translate("LoginView", "PushButton", nullptr));
+        label_5->setText(QApplication::translate("LoginView", "\347\224\250\346\210\267\345\220\215\357\274\232", nullptr));
+        label_4->setText(QApplication::translate("LoginView", "\345\257\206\347\240\201\357\274\232", nullptr));
+        btSignUp->setText(QApplication::translate("LoginView", "\346\263\250\345\206\214", nullptr));
+        btSignIn->setText(QApplication::translate("LoginView", "\347\231\273\345\275\225", nullptr));
     } // retranslateUi
 
 };

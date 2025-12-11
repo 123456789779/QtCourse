@@ -72,14 +72,14 @@
          <item>
           <widget class="QLabel" name="label_5">
            <property name="text">
-            <string>TextLabel</string>
+            <string>用户名：</string>
            </property>
           </widget>
          </item>
          <item>
           <widget class="QLabel" name="label_4">
            <property name="text">
-            <string>TextLabel</string>
+            <string>密码：</string>
            </property>
           </widget>
          </item>
@@ -88,10 +88,10 @@
        <item>
         <layout class="QVBoxLayout" name="verticalLayout">
          <item>
-          <widget class="QLineEdit" name="lineEdit_3"/>
+          <widget class="QLineEdit" name="inputUserName"/>
          </item>
          <item>
-          <widget class="QLineEdit" name="lineEdit_2"/>
+          <widget class="QLineEdit" name="inputUserPassword"/>
          </item>
         </layout>
        </item>
@@ -130,16 +130,16 @@
      <item>
       <layout class="QHBoxLayout" name="horizontalLayout_2">
        <item>
-        <widget class="QPushButton" name="pushButton">
+        <widget class="QPushButton" name="btSignUp">
          <property name="text">
-          <string>PushButton</string>
+          <string>注册</string>
          </property>
         </widget>
        </item>
        <item>
-        <widget class="QPushButton" name="pushButton_2">
+        <widget class="QPushButton" name="btSignIn">
          <property name="text">
-          <string>PushButton</string>
+          <string>登录</string>
          </property>
         </widget>
        </item>

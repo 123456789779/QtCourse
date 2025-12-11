@@ -1,14 +1,14 @@
-#include "patientedit.h"
-#include "ui_patientedit.h"
+#include "patienteditview.h"
+#include "ui_patienteditview.h"
 
-PatientEdit::PatientEdit(QWidget *parent) :
+PatientEditView::PatientEditView(QWidget *parent) :
     QWidget(parent),
-    ui(new Ui::PatientEdit)
+    ui(new Ui::PatientEditView)
 {
     ui->setupUi(this);
 }
 
-PatientEdit::~PatientEdit()
+PatientEditView::~PatientEditView()
 {
     delete ui;
 }

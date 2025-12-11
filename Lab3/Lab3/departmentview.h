@@ -4,19 +4,19 @@
 #include <QWidget>
 
 namespace Ui {
-class Department;
+class DepartmentView;
 }
 
-class Department : public QWidget
+class DepartmentView : public QWidget
 {
     Q_OBJECT
 
 public:
-    explicit Department(QWidget *parent = nullptr);
-    ~Department();
+    explicit DepartmentView(QWidget *parent = nullptr);
+    ~DepartmentView();
 
 private:
-    Ui::Department *ui;
+    Ui::DepartmentView *ui;
 };
 
 #endif // DEPARTMENTVIEW_H
