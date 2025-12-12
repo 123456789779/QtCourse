@@ -10,5 +10,5 @@ DoctorView::DoctorView(QWidget *parent) :
 
 DoctorView::~DoctorView()
 {
-    delete ui;
+//    delete ui;
 }
