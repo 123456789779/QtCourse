@@ -99,6 +99,7 @@ public:
 
         inputUserPassword = new QLineEdit(LoginView);
         inputUserPassword->setObjectName(QString::fromUtf8("inputUserPassword"));
+        inputUserPassword->setEchoMode(QLineEdit::Password);
 
         verticalLayout->addWidget(inputUserPassword);
 

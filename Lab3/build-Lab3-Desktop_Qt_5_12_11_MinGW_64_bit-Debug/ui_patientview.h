@@ -10,6 +10,7 @@
 #define UI_PATIENTVIEW_H
 
 #include <QtCore/QVariant>
+#include <QtGui/QIcon>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QHeaderView>
@@ -27,9 +28,9 @@ public:
     QVBoxLayout *verticalLayout;
     QHBoxLayout *horizontalLayout;
     QLineEdit *txtSearch;
+    QPushButton *btSearch;
     QPushButton *btAdd;
     QPushButton *btDelete;
-    QPushButton *btSearch;
     QPushButton *btEdit;
     QTableView *tableView;
 
@@ -37,7 +38,7 @@ public:
     {
         if (PatientView->objectName().isEmpty())
             PatientView->setObjectName(QString::fromUtf8("PatientView"));
-        PatientView->resize(482, 374);
+        PatientView->resize(748, 697);
         verticalLayout = new QVBoxLayout(PatientView);
         verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
         horizontalLayout = new QHBoxLayout();
@@ -47,23 +48,35 @@ public:
 
         horizontalLayout->addWidget(txtSearch);
 
+        btSearch = new QPushButton(PatientView);
+        btSearch->setObjectName(QString::fromUtf8("btSearch"));
+        QIcon icon;
+        icon.addFile(QString::fromUtf8(":/img/search.png"), QSize(), QIcon::Normal, QIcon::Off);
+        btSearch->setIcon(icon);
+
+        horizontalLayout->addWidget(btSearch);
+
         btAdd = new QPushButton(PatientView);
         btAdd->setObjectName(QString::fromUtf8("btAdd"));
+        QIcon icon1;
+        icon1.addFile(QString::fromUtf8(":/img/new.png"), QSize(), QIcon::Normal, QIcon::Off);
+        btAdd->setIcon(icon1);
 
         horizontalLayout->addWidget(btAdd);
 
         btDelete = new QPushButton(PatientView);
         btDelete->setObjectName(QString::fromUtf8("btDelete"));
+        QIcon icon2;
+        icon2.addFile(QString::fromUtf8(":/img/delete.png"), QSize(), QIcon::Normal, QIcon::Off);
+        btDelete->setIcon(icon2);
 
         horizontalLayout->addWidget(btDelete);
 
-        btSearch = new QPushButton(PatientView);
-        btSearch->setObjectName(QString::fromUtf8("btSearch"));
-
-        horizontalLayout->addWidget(btSearch);
-
         btEdit = new QPushButton(PatientView);
         btEdit->setObjectName(QString::fromUtf8("btEdit"));
+        QIcon icon3;
+        icon3.addFile(QString::fromUtf8(":/img/edit.png"), QSize(), QIcon::Normal, QIcon::Off);
+        btEdit->setIcon(icon3);
 
         horizontalLayout->addWidget(btEdit);
 
@@ -84,10 +97,11 @@ public:
     void retranslateUi(QWidget *PatientView)
     {
         PatientView->setWindowTitle(QApplication::translate("PatientView", "\346\202\243\350\200\205\347\256\241\347\220\206", nullptr));
-        btAdd->setText(QApplication::translate("PatientView", "\346\237\245\346\211\276", nullptr));
-        btDelete->setText(QApplication::translate("PatientView", "\346\267\273\345\212\240", nullptr));
-        btSearch->setText(QApplication::translate("PatientView", "\344\277\256\346\224\271", nullptr));
-        btEdit->setText(QApplication::translate("PatientView", "\345\210\240\351\231\244", nullptr));
+        txtSearch->setPlaceholderText(QApplication::translate("PatientView", "\350\257\267\350\276\223\345\205\245\345\247\223\345\220\215\350\277\233\350\241\214\346\237\245\346\211\276", nullptr));
+        btSearch->setText(QApplication::translate("PatientView", "\346\237\245\346\211\276", nullptr));
+        btAdd->setText(QApplication::translate("PatientView", "\346\267\273\345\212\240", nullptr));
+        btDelete->setText(QApplication::translate("PatientView", "\345\210\240\351\231\244", nullptr));
+        btEdit->setText(QApplication::translate("PatientView", "\344\277\256\346\224\271", nullptr));
     } // retranslateUi
 
 };

@@ -28,29 +28,31 @@ QT_BEGIN_NAMESPACE
 class Ui_PatientEditView
 {
 public:
-    QWidget *widget;
+    QWidget *layoutWidget;
     QVBoxLayout *verticalLayout_2;
     QSpacerItem *verticalSpacer_2;
     QHBoxLayout *horizontalLayout_2;
     QSpacerItem *horizontalSpacer;
     QHBoxLayout *horizontalLayout;
     QGridLayout *gridLayout;
-    QLabel *label_8;
-    QLabel *label_5;
-    QLabel *label;
-    QLineEdit *lineEdit_5;
     QLabel *label_7;
-    QComboBox *comboBox;
-    QLineEdit *lineEdit;
-    QLineEdit *lineEdit_6;
-    QDateEdit *dateEdit;
-    QSpinBox *spinBox_4;
+    QDateEdit *dbDateEditDOB;
+    QComboBox *dbComboSex;
+    QSpinBox *dbSpinWeight;
     QLabel *label_6;
-    QLabel *label_3;
+    QLineEdit *dbEditMobile;
+    QLabel *label;
     QLabel *label_2;
+    QLineEdit *dbEditIDCard;
+    QLabel *label_8;
+    QLineEdit *dbEditID;
+    QLabel *label_5;
+    QLineEdit *dbEditName;
+    QLabel *label_3;
+    QSpinBox *dbSpinHeight;
     QLabel *label_4;
-    QSpinBox *spinBox_3;
-    QLineEdit *lineEdit_8;
+    QLabel *label_9;
+    QLineEdit *dbCreatedTimeStamp;
     QVBoxLayout *verticalLayout;
     QSpacerItem *verticalSpacer;
     QPushButton *pushButton;
@@ -63,10 +65,10 @@ public:
         if (PatientEditView->objectName().isEmpty())
             PatientEditView->setObjectName(QString::fromUtf8("PatientEditView"));
         PatientEditView->resize(627, 431);
-        widget = new QWidget(PatientEditView);
-        widget->setObjectName(QString::fromUtf8("widget"));
-        widget->setGeometry(QRect(40, 0, 531, 411));
-        verticalLayout_2 = new QVBoxLayout(widget);
+        layoutWidget = new QWidget(PatientEditView);
+        layoutWidget->setObjectName(QString::fromUtf8("layoutWidget"));
+        layoutWidget->setGeometry(QRect(40, 0, 531, 411));
+        verticalLayout_2 = new QVBoxLayout(layoutWidget);
         verticalLayout_2->setObjectName(QString::fromUtf8("verticalLayout_2"));
         verticalLayout_2->setContentsMargins(0, 0, 0, 0);
         verticalSpacer_2 = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
@@ -83,85 +85,97 @@ public:
         horizontalLayout->setObjectName(QString::fromUtf8("horizontalLayout"));
         gridLayout = new QGridLayout();
         gridLayout->setObjectName(QString::fromUtf8("gridLayout"));
-        label_8 = new QLabel(widget);
-        label_8->setObjectName(QString::fromUtf8("label_8"));
-
-        gridLayout->addWidget(label_8, 7, 0, 1, 1);
-
-        label_5 = new QLabel(widget);
-        label_5->setObjectName(QString::fromUtf8("label_5"));
-
-        gridLayout->addWidget(label_5, 1, 0, 1, 1);
-
-        label = new QLabel(widget);
-        label->setObjectName(QString::fromUtf8("label"));
-
-        gridLayout->addWidget(label, 0, 0, 1, 2);
-
-        lineEdit_5 = new QLineEdit(widget);
-        lineEdit_5->setObjectName(QString::fromUtf8("lineEdit_5"));
-
-        gridLayout->addWidget(lineEdit_5, 2, 2, 1, 1);
-
-        label_7 = new QLabel(widget);
+        label_7 = new QLabel(layoutWidget);
         label_7->setObjectName(QString::fromUtf8("label_7"));
 
         gridLayout->addWidget(label_7, 6, 0, 1, 2);
 
-        comboBox = new QComboBox(widget);
-        comboBox->setObjectName(QString::fromUtf8("comboBox"));
+        dbDateEditDOB = new QDateEdit(layoutWidget);
+        dbDateEditDOB->setObjectName(QString::fromUtf8("dbDateEditDOB"));
 
-        gridLayout->addWidget(comboBox, 3, 2, 1, 1);
+        gridLayout->addWidget(dbDateEditDOB, 4, 1, 1, 2);
 
-        lineEdit = new QLineEdit(widget);
-        lineEdit->setObjectName(QString::fromUtf8("lineEdit"));
+        dbComboSex = new QComboBox(layoutWidget);
+        dbComboSex->addItem(QString());
+        dbComboSex->addItem(QString());
+        dbComboSex->setObjectName(QString::fromUtf8("dbComboSex"));
 
-        gridLayout->addWidget(lineEdit, 0, 2, 1, 1);
+        gridLayout->addWidget(dbComboSex, 3, 2, 1, 1);
 
-        lineEdit_6 = new QLineEdit(widget);
-        lineEdit_6->setObjectName(QString::fromUtf8("lineEdit_6"));
+        dbSpinWeight = new QSpinBox(layoutWidget);
+        dbSpinWeight->setObjectName(QString::fromUtf8("dbSpinWeight"));
 
-        gridLayout->addWidget(lineEdit_6, 1, 2, 1, 1);
+        gridLayout->addWidget(dbSpinWeight, 6, 2, 1, 1);
 
-        dateEdit = new QDateEdit(widget);
-        dateEdit->setObjectName(QString::fromUtf8("dateEdit"));
-
-        gridLayout->addWidget(dateEdit, 4, 1, 1, 2);
-
-        spinBox_4 = new QSpinBox(widget);
-        spinBox_4->setObjectName(QString::fromUtf8("spinBox_4"));
-
-        gridLayout->addWidget(spinBox_4, 6, 2, 1, 1);
-
-        label_6 = new QLabel(widget);
+        label_6 = new QLabel(layoutWidget);
         label_6->setObjectName(QString::fromUtf8("label_6"));
 
         gridLayout->addWidget(label_6, 5, 0, 1, 1);
 
-        label_3 = new QLabel(widget);
-        label_3->setObjectName(QString::fromUtf8("label_3"));
+        dbEditMobile = new QLineEdit(layoutWidget);
+        dbEditMobile->setObjectName(QString::fromUtf8("dbEditMobile"));
 
-        gridLayout->addWidget(label_3, 4, 0, 1, 1);
+        gridLayout->addWidget(dbEditMobile, 7, 2, 1, 1);
 
-        label_2 = new QLabel(widget);
+        label = new QLabel(layoutWidget);
+        label->setObjectName(QString::fromUtf8("label"));
+
+        gridLayout->addWidget(label, 0, 0, 1, 2);
+
+        label_2 = new QLabel(layoutWidget);
         label_2->setObjectName(QString::fromUtf8("label_2"));
 
         gridLayout->addWidget(label_2, 2, 0, 1, 1);
 
-        label_4 = new QLabel(widget);
+        dbEditIDCard = new QLineEdit(layoutWidget);
+        dbEditIDCard->setObjectName(QString::fromUtf8("dbEditIDCard"));
+
+        gridLayout->addWidget(dbEditIDCard, 2, 2, 1, 1);
+
+        label_8 = new QLabel(layoutWidget);
+        label_8->setObjectName(QString::fromUtf8("label_8"));
+
+        gridLayout->addWidget(label_8, 7, 0, 1, 1);
+
+        dbEditID = new QLineEdit(layoutWidget);
+        dbEditID->setObjectName(QString::fromUtf8("dbEditID"));
+
+        gridLayout->addWidget(dbEditID, 0, 2, 1, 1);
+
+        label_5 = new QLabel(layoutWidget);
+        label_5->setObjectName(QString::fromUtf8("label_5"));
+
+        gridLayout->addWidget(label_5, 1, 0, 1, 1);
+
+        dbEditName = new QLineEdit(layoutWidget);
+        dbEditName->setObjectName(QString::fromUtf8("dbEditName"));
+
+        gridLayout->addWidget(dbEditName, 1, 2, 1, 1);
+
+        label_3 = new QLabel(layoutWidget);
+        label_3->setObjectName(QString::fromUtf8("label_3"));
+
+        gridLayout->addWidget(label_3, 4, 0, 1, 1);
+
+        dbSpinHeight = new QSpinBox(layoutWidget);
+        dbSpinHeight->setObjectName(QString::fromUtf8("dbSpinHeight"));
+
+        gridLayout->addWidget(dbSpinHeight, 5, 2, 1, 1);
+
+        label_4 = new QLabel(layoutWidget);
         label_4->setObjectName(QString::fromUtf8("label_4"));
 
         gridLayout->addWidget(label_4, 3, 0, 1, 2);
 
-        spinBox_3 = new QSpinBox(widget);
-        spinBox_3->setObjectName(QString::fromUtf8("spinBox_3"));
+        label_9 = new QLabel(layoutWidget);
+        label_9->setObjectName(QString::fromUtf8("label_9"));
 
-        gridLayout->addWidget(spinBox_3, 5, 2, 1, 1);
+        gridLayout->addWidget(label_9, 8, 0, 1, 1);
 
-        lineEdit_8 = new QLineEdit(widget);
-        lineEdit_8->setObjectName(QString::fromUtf8("lineEdit_8"));
+        dbCreatedTimeStamp = new QLineEdit(layoutWidget);
+        dbCreatedTimeStamp->setObjectName(QString::fromUtf8("dbCreatedTimeStamp"));
 
-        gridLayout->addWidget(lineEdit_8, 7, 2, 1, 1);
+        gridLayout->addWidget(dbCreatedTimeStamp, 8, 2, 1, 1);
 
 
         horizontalLayout->addLayout(gridLayout);
@@ -172,12 +186,12 @@ public:
 
         verticalLayout->addItem(verticalSpacer);
 
-        pushButton = new QPushButton(widget);
+        pushButton = new QPushButton(layoutWidget);
         pushButton->setObjectName(QString::fromUtf8("pushButton"));
 
         verticalLayout->addWidget(pushButton);
 
-        pushButton_2 = new QPushButton(widget);
+        pushButton_2 = new QPushButton(layoutWidget);
         pushButton_2->setObjectName(QString::fromUtf8("pushButton_2"));
 
         verticalLayout->addWidget(pushButton_2);
@@ -208,14 +222,18 @@ public:
     void retranslateUi(QWidget *PatientEditView)
     {
         PatientEditView->setWindowTitle(QApplication::translate("PatientEditView", "\347\274\226\350\276\221\346\202\243\350\200\205\344\277\241\346\201\257", nullptr));
+        label_7->setText(QApplication::translate("PatientEditView", "\344\275\223\351\207\215\357\274\232", nullptr));
+        dbComboSex->setItemText(0, QApplication::translate("PatientEditView", "\347\224\267", nullptr));
+        dbComboSex->setItemText(1, QApplication::translate("PatientEditView", "\345\245\263", nullptr));
+
+        label_6->setText(QApplication::translate("PatientEditView", "\350\272\253\351\253\230\357\274\232", nullptr));
+        label->setText(QApplication::translate("PatientEditView", "ID:", nullptr));
+        label_2->setText(QApplication::translate("PatientEditView", "\350\272\253\344\273\275\350\257\201", nullptr));
         label_8->setText(QApplication::translate("PatientEditView", "\346\211\213\346\234\272\345\217\267\357\274\232", nullptr));
         label_5->setText(QApplication::translate("PatientEditView", "\345\247\223\345\220\215\357\274\232", nullptr));
-        label->setText(QApplication::translate("PatientEditView", "ID:", nullptr));
-        label_7->setText(QApplication::translate("PatientEditView", "\344\275\223\351\207\215\357\274\232", nullptr));
-        label_6->setText(QApplication::translate("PatientEditView", "\350\272\253\351\253\230\357\274\232", nullptr));
         label_3->setText(QApplication::translate("PatientEditView", "\345\207\272\347\224\237\346\227\245\346\234\237\357\274\232", nullptr));
-        label_2->setText(QApplication::translate("PatientEditView", "\350\272\253\344\273\275\350\257\201", nullptr));
         label_4->setText(QApplication::translate("PatientEditView", "\346\200\247\345\210\253\357\274\232", nullptr));
+        label_9->setText(QApplication::translate("PatientEditView", "\345\210\233\345\273\272\346\227\266\351\227\264\357\274\232", nullptr));
         pushButton->setText(QApplication::translate("PatientEditView", "\344\277\235\345\255\230", nullptr));
         pushButton_2->setText(QApplication::translate("PatientEditView", "\345\217\226\346\266\210", nullptr));
     } // retranslateUi

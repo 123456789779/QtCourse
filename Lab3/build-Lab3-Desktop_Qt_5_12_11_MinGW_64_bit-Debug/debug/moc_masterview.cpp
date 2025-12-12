@@ -21,8 +21,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_MasterView_t {
-    QByteArrayData data[13];
-    char stringdata0[189];
+    QByteArrayData data[14];
+    char stringdata0[195];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -38,17 +38,18 @@ QT_MOC_LITERAL(3, 24, 12), // "goWelcomView"
 QT_MOC_LITERAL(4, 37, 12), // "goDoctorView"
 QT_MOC_LITERAL(5, 50, 16), // "goDepartmentView"
 QT_MOC_LITERAL(6, 67, 17), // "goPatientEditView"
-QT_MOC_LITERAL(7, 85, 13), // "goPatientView"
-QT_MOC_LITERAL(8, 99, 14), // "goPreviousView"
-QT_MOC_LITERAL(9, 114, 17), // "on_btBack_clicked"
-QT_MOC_LITERAL(10, 132, 31), // "on_stackedWidget_currentChanged"
-QT_MOC_LITERAL(11, 164, 4), // "arg1"
-QT_MOC_LITERAL(12, 169, 19) // "on_btLogout_clicked"
+QT_MOC_LITERAL(7, 85, 5), // "rowNo"
+QT_MOC_LITERAL(8, 91, 13), // "goPatientView"
+QT_MOC_LITERAL(9, 105, 14), // "goPreviousView"
+QT_MOC_LITERAL(10, 120, 17), // "on_btBack_clicked"
+QT_MOC_LITERAL(11, 138, 31), // "on_stackedWidget_currentChanged"
+QT_MOC_LITERAL(12, 170, 4), // "arg1"
+QT_MOC_LITERAL(13, 175, 19) // "on_btLogout_clicked"
 
     },
     "MasterView\0goLoginView\0\0goWelcomView\0"
     "goDoctorView\0goDepartmentView\0"
-    "goPatientEditView\0goPatientView\0"
+    "goPatientEditView\0rowNo\0goPatientView\0"
     "goPreviousView\0on_btBack_clicked\0"
     "on_stackedWidget_currentChanged\0arg1\0"
     "on_btLogout_clicked"
@@ -73,23 +74,23 @@ static const uint qt_meta_data_MasterView[] = {
        3,    0,   65,    2, 0x0a /* Public */,
        4,    0,   66,    2, 0x0a /* Public */,
        5,    0,   67,    2, 0x0a /* Public */,
-       6,    0,   68,    2, 0x0a /* Public */,
-       7,    0,   69,    2, 0x0a /* Public */,
-       8,    0,   70,    2, 0x0a /* Public */,
-       9,    0,   71,    2, 0x08 /* Private */,
-      10,    1,   72,    2, 0x08 /* Private */,
-      12,    0,   75,    2, 0x08 /* Private */,
+       6,    1,   68,    2, 0x0a /* Public */,
+       8,    0,   71,    2, 0x0a /* Public */,
+       9,    0,   72,    2, 0x0a /* Public */,
+      10,    0,   73,    2, 0x08 /* Private */,
+      11,    1,   74,    2, 0x08 /* Private */,
+      13,    0,   77,    2, 0x08 /* Private */,
 
  // slots: parameters
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
+    QMetaType::Void, QMetaType::Int,    7,
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
-    QMetaType::Void,
-    QMetaType::Void, QMetaType::Int,   11,
+    QMetaType::Void, QMetaType::Int,   12,
     QMetaType::Void,
 
        0        // eod
@@ -105,7 +106,7 @@ void MasterView::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         case 1: _t->goWelcomView(); break;
         case 2: _t->goDoctorView(); break;
         case 3: _t->goDepartmentView(); break;
-        case 4: _t->goPatientEditView(); break;
+        case 4: _t->goPatientEditView((*reinterpret_cast< int(*)>(_a[1]))); break;
         case 5: _t->goPatientView(); break;
         case 6: _t->goPreviousView(); break;
         case 7: _t->on_btBack_clicked(); break;
