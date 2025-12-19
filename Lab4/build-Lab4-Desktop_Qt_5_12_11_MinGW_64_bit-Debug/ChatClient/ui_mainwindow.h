@@ -52,7 +52,7 @@ public:
     QGridLayout *gridLayout;
     QLabel *label_2;
     QLineEdit *serverEdit;
-    QLabel *label_3;
+    QLabel *label;
     QLineEdit *usernameEdit;
     QSpacerItem *verticalSpacer;
     QPushButton *loginButton;
@@ -167,10 +167,10 @@ public:
 
         gridLayout->addWidget(serverEdit, 0, 1, 1, 1);
 
-        label_3 = new QLabel(loginFrame);
-        label_3->setObjectName(QString::fromUtf8("label_3"));
+        label = new QLabel(loginFrame);
+        label->setObjectName(QString::fromUtf8("label"));
 
-        gridLayout->addWidget(label_3, 1, 0, 1, 1);
+        gridLayout->addWidget(label, 1, 0, 1, 1);
 
         usernameEdit = new QLineEdit(loginFrame);
         usernameEdit->setObjectName(QString::fromUtf8("usernameEdit"));
@@ -208,7 +208,7 @@ public:
 
         retranslateUi(MainWindow);
 
-        stackedWidget->setCurrentIndex(0);
+        stackedWidget->setCurrentIndex(1);
 
 
         QMetaObject::connectSlotsByName(MainWindow);
@@ -221,7 +221,9 @@ public:
         sayButton->setText(QApplication::translate("MainWindow", "\345\217\221\351\200\201", nullptr));
         logoutButton->setText(QApplication::translate("MainWindow", "\351\200\200\345\207\272", nullptr));
         label_2->setText(QApplication::translate("MainWindow", "\346\234\215\345\212\241\345\231\250\345\234\260\345\235\200\357\274\232", nullptr));
-        label_3->setText(QApplication::translate("MainWindow", "\346\230\265\347\247\260\357\274\232", nullptr));
+        serverEdit->setText(QApplication::translate("MainWindow", "127.0.0.1", nullptr));
+        label->setText(QApplication::translate("MainWindow", "\346\230\265\347\247\260\357\274\232", nullptr));
+        usernameEdit->setText(QApplication::translate("MainWindow", "\345\224\220\344\274\237\344\270\232", nullptr));
         loginButton->setText(QApplication::translate("MainWindow", "\347\231\273\345\275\225\350\201\212\345\244\251\345\256\244", nullptr));
     } // retranslateUi
 
