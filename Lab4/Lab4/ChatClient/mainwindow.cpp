@@ -56,7 +56,7 @@ void MainWindow::messageReceived(const QString &sender, const QString &text)
 {
     ui->roomTextEdit->append(QString("%1 : %2").arg(sender).arg(text));
 }
-
+//
 void MainWindow::jsonReceived(const QJsonObject &docObj)
 {
     const QJsonValue typeVal = docObj.value("type");
