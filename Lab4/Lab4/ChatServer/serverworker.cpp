@@ -34,7 +34,7 @@ void ServerWorker::onReadyRead()
         socketStream >> jsonData;
         if (socketStream.commitTransaction()) {
 //            emit logMessage(QString::fromUtf8(jsonData));
-//            sendMessage("I recieved message");
+//          sendMessage("I recieved message");
 
             QJsonParseError parseError;
             const QJsonDocument jsonDoc = QJsonDocument::fromJson(jsonData, &parseError);
@@ -62,7 +62,7 @@ void ServerWorker::sendMessage(const QString &text, const QString &type)
         serverStream << QJsonDocument(message).toJson();
     }
 }
-
+//
 void ServerWorker::sendJson(const QJsonObject &json)
 {
     const QByteArray jsonData = QJsonDocument(json).toJson(QJsonDocument::Compact);
